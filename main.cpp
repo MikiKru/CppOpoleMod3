@@ -105,7 +105,7 @@ public:
         cout << "Brand: " << this->brand << endl;
         cout << "Model: " << this->model << endl;
         cout << "Price: " << this->price << " PLN" << endl;
-        cout << "Discount: " << this->discount << endl;
+        cout << "Discount: " << this->discount * 100 << "%" << endl;
     }
 };
 
@@ -117,12 +117,23 @@ int main() {
     audi.brand = "AUDI";
     audi.model = "A5";
     audi.price = 600000.00;
-    audi.printAuto();
+
 
     Auto bmw;
+    bmw.id = 2;
+    bmw.brand = "BMW";
+    bmw.model = "X5";
+    bmw.price = 400000.00;
 
     Auto vw;
+    vw.id = 3;
+    vw.brand = "VW";
+    vw.model = "Passat";
+    vw.price = 200000.00;
 
+    audi.printAuto();
+    vw.printAuto();
+    bmw.printAuto();
 
     return 0;
 }
