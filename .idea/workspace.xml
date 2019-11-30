@@ -12,11 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef4dd69b-d9b3-4625-83f6-037026ef4b5e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CppOpoleMod3.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CppOpoleMod3.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CppOpoleMod3.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CppOpoleMod3.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575099966536</updated>
-      <workItem from="1575099968697" duration="15320000" />
+      <workItem from="1575099968697" duration="15602000" />
     </task>
     <servers />
   </component>

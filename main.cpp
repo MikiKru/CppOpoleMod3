@@ -107,6 +107,10 @@ public:
         cout << "Price: " << this->price << " PLN" << endl;
         cout << "Discount: " << this->discount * 100 << "%" << endl;
     }
+    void setDiscount(double newDiscount){
+        // aktualizacja rabatu
+        this->discount = newDiscount;
+    }
 };
 
 int main() {
