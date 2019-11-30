@@ -130,17 +130,42 @@ public:
 // inicjalizacja wartosci globalId
 int Auto::globalId = 0;
 
+class Grades{
+public:
+    double grades[5];                                       // tu będą oceny studentów
+    double gradesTemplate[6] = {2, 3, 3.5, 4, 4.5, 5};      // skala ocen
+    double grade;
+    void assignGrades(){
+        for (int i = 0; i < sizeof(grades)/ sizeof(double); i++) {
+            cout << "Podaj " << (i+1) << " ocene" << endl;
+            cin >> grade;
+            bool isOk = false;
+            for (int j = 0; j < sizeof(gradesTemplate)/ sizeof(double); j++) {
+                if(grade == gradesTemplate[j]){
+                    isOk = true;
+                    grades[i] = grade;
+                    break;
+                }
+            }
+            if(isOk == false){
+                i--;
+                continue;
+            }
+
+        }
+    }
+
+    double calculateAvg(){
+        double cumSum = 0.;
+        for (int i = 0; i < sizeof(grades)/ sizeof(double); i++) {
+            cumSum += grades[i];
+        }
+        return cumSum/(sizeof(grades)/ sizeof(double));
+    }
+};
 int main() {
-    // utworzenie obiektów -> daje dostęp do póblicznych pol i metod klasowych
-    Auto audi("AUDI","A7",600000.);       // wykorzystanie konstruktora
-    Auto bmw("BMW","X5", 500000.);
-    Auto vw("VW","Passat", 200000.);
-    vw.setDiscount(0.2);
-    audi.printAuto();
-    vw.printAuto();
-    bmw.printAuto();
-    // ręczne wywołanie destrukcja
-//    bmw.~Auto();
-//    bmw.printAuto();
+    Grades g;
+    g.assignGrades();
+    cout << "AVG: " << g.calculateAvg() << endl;
     return 0;
 }
