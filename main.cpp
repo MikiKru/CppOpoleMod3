@@ -93,6 +93,7 @@ string cesarEncoder(string text, int shift){
 // deklaracja klasy
 class Auto{
 public:
+    static int globalId;
     int id;
     string brand;
     string model;
@@ -100,11 +101,17 @@ public:
 private :
     double discount = 0.1;      // domyślny rabat
 public:
-    Auto(int id, string brand, string model, double price){       // konstruktor
-        this->id = id;              // przypisanie wartości do pola klasowego
+    Auto(string brand, string model, double price){       // konstruktor
+        // inkrementacja id
+        globalId++;
+        // przypisanie wartości statycznej id
+        this->id = globalId;              // przypisanie wartości do pola klasowego
         this->brand = brand;
         this->model = model;
         this->price = price;
+    }
+    ~ Auto(){
+        cout << "obiekt zostal zniszczony" << endl;
     }
     void printAuto(){           // funkcja wypisująca informacje o aucie
         cout << "Id: " << this->id << endl;
@@ -114,21 +121,26 @@ public:
         cout << "Discount: " << this->discount * 100 << "%" << endl;
         cout << "Amount: " << (1 - this->discount) * this->price << "PLN" << endl;
     }
+
     void setDiscount(double newDiscount){
         // aktualizacja rabatu
         this->discount = newDiscount;
     }
 };
+// inicjalizacja wartosci globalId
+int Auto::globalId = 0;
 
 int main() {
     // utworzenie obiektów -> daje dostęp do póblicznych pol i metod klasowych
-    Auto audi(1,"AUDI","A7",600000.);       // wykorzystanie konstruktora
-    Auto bmw(2,"BMW","X5", 500000.);
-    Auto vw(3, "VW","Passat", 200000.);
+    Auto audi("AUDI","A7",600000.);       // wykorzystanie konstruktora
+    Auto bmw("BMW","X5", 500000.);
+    Auto vw("VW","Passat", 200000.);
     vw.setDiscount(0.2);
     audi.printAuto();
     vw.printAuto();
     bmw.printAuto();
-
+    // ręczne wywołanie destrukcja
+//    bmw.~Auto();
+//    bmw.printAuto();
     return 0;
 }
