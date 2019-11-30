@@ -38,11 +38,12 @@ void triangleConstructCheck(int a, int b, int c, bool & check){
     }
 }
 void sortNamesAsc(){
-    string names [] = {"Jan", "Alicja", "Mateusz", "Robert", "Monika", "Anna"};
+    string names [] = {"Anna", "Jan", "Alicja", "Mateusz", "Robert", "Monika"};
     // iteruje po próbach
     int iterations = 0;
     for (int i = 0; i < (sizeof(names)/ sizeof(string)) - 1; i++) {
         // zmienia kolejność na poszczególnych indeksach
+        int change = 0;
         for (int j = 0; j < (sizeof(names)/ sizeof(string)) - 1; ++j) {
             // sprawdzam sąsiednie elementy
             if(names[j] > names[j+1]){
@@ -53,9 +54,16 @@ void sortNamesAsc(){
                 names[j+1] = names[j];
                 // na indeks j nadpisujemy wartość ze zmiennnej name
                 names[j] = name;
+                // inkrementuje zmienna change
+                change++;
             }
         }
         iterations ++;
+        if(change == 0){
+            cout << "przerwanie" << endl;
+            // przerwanie sortowania
+            break;
+        }
     }
     cout << "POSORTOWANE IMIONA W " << iterations << " ITERACJACH" << endl;
     for (int k = 0; k < sizeof(names)/ sizeof(string); ++k) {
