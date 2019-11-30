@@ -89,7 +89,40 @@ string cesarEncoder(string text, int shift){
     }
     return textEncoded;
 }
+// PROGRAMOWANIE OBIEKTOWE
+// deklaracja klasy
+class Auto{
+public:
+    int id;
+    string brand;
+    string model;
+    double price;
+private :
+    double discount = 0.1;      // domyślny rabat
+public:
+    void printAuto(){           // funkcja wypisująca informacje o aucie
+        cout << "Id: " << this->id << endl;
+        cout << "Brand: " << this->brand << endl;
+        cout << "Model: " << this->model << endl;
+        cout << "Price: " << this->price << " PLN" << endl;
+        cout << "Discount: " << this->discount << endl;
+    }
+};
+
 int main() {
-    cout << cesarEncoder("Ala ma 2 koty" ,2) << endl;
+    // utworzenie obiektów -> daje dostęp do póblicznych pol i metod klasowych
+    Auto audi;
+    // modyfikacja pól obiektu audi
+    audi.id = 1;
+    audi.brand = "AUDI";
+    audi.model = "A5";
+    audi.price = 600000.00;
+    audi.printAuto();
+
+    Auto bmw;
+
+    Auto vw;
+
+
     return 0;
 }
