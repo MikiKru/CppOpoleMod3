@@ -73,12 +73,23 @@ void sortNamesAsc(){
 string cesarEncoder(string text, int shift){
     string alphabet = "abcdefghijklmnoprstuwxyz ";
 //  string alphabet = "cdefghijklmnoprstuwxyz ab";
-    cout << alphabet.find("a") << endl;
-    return "";
+    string textEncoded = "";
+    // pętla po całym napisie text
+    for (int i = 0; i < text.length(); i++) {
+        // na jakim indeksie występują kolejne znaki w ekście
+        int index = alphabet.find(text[i]);
+        // indeks przesuwamy o shift
+        if(index >= shift) {
+            index = index - shift;
+        } else {
+            index = (sizeof(alphabet)/ sizeof(string)) - 1 - shift;
+        }
+        // za każdym razem do kodu dodajemy znak znajdujący się na indeksie
+        textEncoded = textEncoded + alphabet[index];
+    }
+    return textEncoded;
 }
-
-
 int main() {
-    cesarEncoder("ala ma kota" ,2);
+    cout << cesarEncoder("ala ma kota" ,0) << endl;
     return 0;
 }
