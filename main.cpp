@@ -21,14 +21,30 @@ double* getSquareFunctionPeaks(double a, double b, double c){
     return peaks;
 }
 
+void getSquareFunctionPeaksRef(double a, double b, double c, double & p, double & q){
+    p = -b/(2*a);
+    q = (pow(b,2) - 4*a*c)/(4*a);
+}
 
+void incrementValue(int & value){
+    cout << "wprowadzono " << value << endl;
+    cout << "po inkrementacji " << ++value << endl;
+}
 
+void triangleConstructCheck(int a, int b, int c, bool & check){
+    // wyszukanie wartości max
+    if((a + b) >= c){
+        check = !check;
+    }
+}
 int main() {
-    squareFunction(2,3,4);
-    squareFunction(1,2,1);
-    squareFunction(1,3.2,1);
-    double* peaks = getSquareFunctionPeaks(1,2,3);
-    cout << "p: " << peaks[0] << endl;
-    cout << "q: " << peaks[1] << endl;
+    bool check = false;
+    triangleConstructCheck(1,1,2, check);
+    if(check){
+        cout << "z podanych bokow mozna skonstruowac trojkat" << endl;
+    } else {
+        cout << "z podanych bokow nie mozna skonstruowac trojkata" << endl;
+    }
+
     return 0;
 }
