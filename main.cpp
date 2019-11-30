@@ -70,9 +70,15 @@ void sortNamesAsc(){
         cout << names[k] << endl;
     }
 }
+string cesarEncoder(string text, int shift){
+    string alphabet = "abcdefghijklmnoprstuwxyz ";
+//  string alphabet = "cdefghijklmnoprstuwxyz ab";
+    cout << alphabet.find("a") << endl;
+    return "";
+}
+
 
 int main() {
-//    string names [] = {"Jan", "Alicja", "Mateusz", "Robert", "Monika", "Anna"};
-    sortNamesAsc();
+    cesarEncoder("ala ma kota" ,2);
     return 0;
 }
