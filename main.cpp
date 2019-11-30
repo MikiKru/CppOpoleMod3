@@ -71,18 +71,18 @@ void sortNamesAsc(){
     }
 }
 string cesarEncoder(string text, int shift){
-    string alphabet = "abcdefghijklmnoprstuwxyz ";
-//  string alphabet = "cdefghijklmnoprstuwxyz ab";
+    string alphabet = "abcdefghijklmnoprstuwxyz ";      //ala ma kota   -> oryginał
+//  string alphabet = "cdefghijklmnoprstuwxyz ab";      //cncbocbmrwc   -> szyfr z przesunięciem 2
     string textEncoded = "";
     // pętla po całym napisie text
     for (int i = 0; i < text.length(); i++) {
         // na jakim indeksie występują kolejne znaki w ekście
         int index = alphabet.find(text[i]);
         // indeks przesuwamy o shift
-        if(index >= shift) {
-            index = index - shift;
+        if(index + shift > alphabet.length() ) {
+            index = alphabet.length() - 2 - index + shift;
         } else {
-            index = (sizeof(alphabet)/ sizeof(string)) - 1 - shift;
+            index = index + shift;
         }
         // za każdym razem do kodu dodajemy znak znajdujący się na indeksie
         textEncoded = textEncoded + alphabet[index];
@@ -90,6 +90,6 @@ string cesarEncoder(string text, int shift){
     return textEncoded;
 }
 int main() {
-    cout << cesarEncoder("ala ma kota" ,0) << endl;
+    cout << cesarEncoder("ala ma kota" ,2) << endl;
     return 0;
 }
