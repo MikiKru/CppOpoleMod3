@@ -71,7 +71,7 @@ void sortNamesAsc(){
     }
 }
 string cesarEncoder(string text, int shift){
-    string alphabet = "abcdefghijklmnoprstuwxyz ";      //ala ma kota   -> oryginał
+    string alphabet = "0123456789ABCDEFGHIJKLMNOPRSTUWXYZabcdefghijklmnoprstuwxyz ";      //ala ma kota   -> oryginał
 //  string alphabet = "cdefghijklmnoprstuwxyz ab";      //cncbocbmrwc   -> szyfr z przesunięciem 2
     string textEncoded = "";
     // pętla po całym napisie text
@@ -90,6 +90,6 @@ string cesarEncoder(string text, int shift){
     return textEncoded;
 }
 int main() {
-    cout << cesarEncoder("ala ma kota" ,2) << endl;
+    cout << cesarEncoder("Ala ma 2 koty" ,2) << endl;
     return 0;
 }
