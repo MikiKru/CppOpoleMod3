@@ -37,14 +37,34 @@ void triangleConstructCheck(int a, int b, int c, bool & check){
         check = !check;
     }
 }
-int main() {
-    bool check = false;
-    triangleConstructCheck(1,1,2, check);
-    if(check){
-        cout << "z podanych bokow mozna skonstruowac trojkat" << endl;
-    } else {
-        cout << "z podanych bokow nie mozna skonstruowac trojkata" << endl;
+void sortNamesAsc(){
+    string names [] = {"Jan", "Alicja", "Mateusz", "Robert", "Monika", "Anna"};
+    // iteruje po próbach
+    int iterations = 0;
+    for (int i = 0; i < (sizeof(names)/ sizeof(string)) - 1; i++) {
+        // zmienia kolejność na poszczególnych indeksach
+        for (int j = 0; j < (sizeof(names)/ sizeof(string)) - 1; ++j) {
+            // sprawdzam sąsiednie elementy
+            if(names[j] > names[j+1]){
+                // zmiana kolejności wartości na indeksach j oraz j+1
+                // wyprowadzam do zmiennej wartość która będzie nadpisywana
+                string name = names[j + 1];
+                // nadpisuję wartość na indeksie j + 1 wartością j
+                names[j+1] = names[j];
+                // na indeks j nadpisujemy wartość ze zmiennnej name
+                names[j] = name;
+            }
+        }
+        iterations ++;
     }
+    cout << "POSORTOWANE IMIONA W " << iterations << " ITERACJACH" << endl;
+    for (int k = 0; k < sizeof(names)/ sizeof(string); ++k) {
+        cout << names[k] << endl;
+    }
+}
 
+int main() {
+//    string names [] = {"Jan", "Alicja", "Mateusz", "Robert", "Monika", "Anna"};
+    sortNamesAsc();
     return 0;
 }
