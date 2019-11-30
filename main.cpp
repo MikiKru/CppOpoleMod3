@@ -100,12 +100,19 @@ public:
 private :
     double discount = 0.1;      // domyślny rabat
 public:
+    Auto(int id, string brand, string model, double price){       // konstruktor
+        this->id = id;              // przypisanie wartości do pola klasowego
+        this->brand = brand;
+        this->model = model;
+        this->price = price;
+    }
     void printAuto(){           // funkcja wypisująca informacje o aucie
         cout << "Id: " << this->id << endl;
         cout << "Brand: " << this->brand << endl;
         cout << "Model: " << this->model << endl;
         cout << "Price: " << this->price << " PLN" << endl;
         cout << "Discount: " << this->discount * 100 << "%" << endl;
+        cout << "Amount: " << (1 - this->discount) * this->price << "PLN" << endl;
     }
     void setDiscount(double newDiscount){
         // aktualizacja rabatu
@@ -115,26 +122,10 @@ public:
 
 int main() {
     // utworzenie obiektów -> daje dostęp do póblicznych pol i metod klasowych
-    Auto audi;
-    // modyfikacja pól obiektu audi
-    audi.id = 1;
-    audi.brand = "AUDI";
-    audi.model = "A5";
-    audi.price = 600000.00;
-
-
-    Auto bmw;
-    bmw.id = 2;
-    bmw.brand = "BMW";
-    bmw.model = "X5";
-    bmw.price = 400000.00;
-
-    Auto vw;
-    vw.id = 3;
-    vw.brand = "VW";
-    vw.model = "Passat";
-    vw.price = 200000.00;
-
+    Auto audi(1,"AUDI","A7",600000.);       // wykorzystanie konstruktora
+    Auto bmw(2,"BMW","X5", 500000.);
+    Auto vw(3, "VW","Passat", 200000.);
+    vw.setDiscount(0.2);
     audi.printAuto();
     vw.printAuto();
     bmw.printAuto();
