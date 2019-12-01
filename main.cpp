@@ -320,19 +320,32 @@ public:
             employees[i].toString();
         }
     }
+    void deleteEmployeeById(int deletedId){
+        for (int i = 0; i < index; i++) {
+            if(employees[i].getId() == deletedId){
+                // obiekt pustego praconwnika
+                Employee e;
+                employees[i] = e;
+            }
+        }
+    }
 };
-
 int Employee::globalId=0;
-
 int main() {
     Company c;
     while(true) {
-        cout << "(I)-dodaj pracownika \n(S)-wypisz wszystkich \n(Q)-wyjscie" << endl;
+        cout << "(I)-dodaj pracownika \n(S)-wypisz wszystkich \n(D)-usun \n(Q)-wyjscie" << endl;
         string choice;
         cin >> choice;
-        if(choice == "Q" || choice == "q"){
+        if(choice == "Q" || choice == "q") {
             cout << "wyjscie z programu" << endl;
             break;
+        } else if(choice =="D" || choice == "d"){
+            c.getEmployees();
+            cout << "podaj id pracownika do usuniecia" << endl;
+            int  deletedId;
+            cin >> deletedId;
+            c.deleteEmployeeById(deletedId);
         } else if(choice == "I" || choice == "i"){
             string name, lastname, possition;
             double salary;
