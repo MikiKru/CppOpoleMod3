@@ -163,9 +163,47 @@ public:
         return cumSum/(sizeof(grades)/ sizeof(double));
     }
 };
+
+class Lotto{
+public:
+    int result [6];
+public:
+    // uruchomienie losowania
+    void generateNumbers(){
+        srand(time(NULL));
+        for (int i = 0; i < sizeof(result)/ sizeof(int); i++) {
+            // sprawdzenie czy wartośc nie jest już dostępna w liście result
+            int number = (rand() % 49) + 1;      // losowanie liczb z zakresu 1 - 49
+            bool isUnique = true;
+            // pętla sprawdzająca czy wartość number już występuje w liście result
+            for (int j = 0; j <= i; j++) {
+                if(number == result[j]){
+                    // wartość się powtarza
+                    isUnique = false;
+                    i--;        // dekrementacja i
+                    break;
+                }
+            }
+            // gdy wartość się nie powtarza
+            if(isUnique){
+                result[i] = number;
+            }
+//            cout << number << endl;
+        }
+    }
+    void getResult(){
+        for (int i = 0; i < sizeof(result)/ sizeof(int) ; ++i) {
+            cout << result[i] << endl;
+        }
+    }
+
+    void sortNumbers(bool asc){     // asc=true min-max if asc=false max-min
+    }
+};
+
 int main() {
-    Grades g;
-    g.assignGrades();
-    cout << "AVG: " << g.calculateAvg() << endl;
+    Lotto l;
+    l.generateNumbers();
+    l.getResult();
     return 0;
 }
