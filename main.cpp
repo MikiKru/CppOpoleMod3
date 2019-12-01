@@ -193,11 +193,22 @@ public:
     }
     void getResult(){
         for (int i = 0; i < sizeof(result)/ sizeof(int) ; ++i) {
-            cout << result[i] << endl;
+            cout << result[i] << " ";
         }
+        cout << endl;
     }
 
-    void sortNumbers(bool asc){     // asc=true min-max if asc=false max-min
+    void sortNumbers(bool asc){     // asc=true min-max if asc=false max-min //
+        for (int i = 0; i < (sizeof(result)/ sizeof(int)) - 1; ++i) {
+            for (int j = 0; j < (sizeof(result)/ sizeof(int)) -1; ++j) {
+                if(result[j] > result[j+1]){
+                    int element = result[j+1];
+                    result[j+1] = result[j];
+                    result[j] = element;
+                }
+            }
+        }
+
     }
 };
 
@@ -205,5 +216,8 @@ int main() {
     Lotto l;
     l.generateNumbers();
     l.getResult();
+    l.sortNumbers(true);
+    l.getResult();
+
     return 0;
 }
