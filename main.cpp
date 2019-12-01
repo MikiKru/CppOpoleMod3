@@ -281,6 +281,7 @@ public:
     void setSalary(double salary){
         this->salary = salary;
     }
+    Employee (){}       // konstruktor domyślny do inicjalizacji listy employees
     // konstruktor
     Employee(string name, string lastname, string possition, double salary){
         this->name = name;
