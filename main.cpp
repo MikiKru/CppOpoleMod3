@@ -233,18 +233,76 @@ public:
         this->weight = weight;
         this->height = height;
     }
+    void printPlayer(){
+        cout << "Id: " << id << endl;
+        cout <<  "Name: "<< name << endl;
+        cout << "Lastname: "<< lastname << endl;
+        cout << "Representation: " << repr << endl;
+        cout << "Weight: "<< weight << "KG" << endl;
+        cout << "Height: " << height << "CM" << endl;
+        cout << "BMI: "<< calculateBMI() << endl;
+    }
+private:
     double calculateBMI(){
         return weight/(pow(height/100,2));
-    }
-    void printPlayer(){
-
     }
 };
 int Player::globalId = 0;
 
-int main() {
-    Player p("Adam","Malysz","POL",50, 165);
-    cout << "BMI: " << p.calculateBMI() << endl;
 
+class Employee {
+private:
+    string name, lastname, possition;
+    double salary;
+public:
+    // gettery -> bez argumentu zwracające wartoś typu pola
+    string getName(){
+        return this->name;
+    }
+    string getLastname(){
+        return this->lastname;
+    }
+    string getPossition(){
+        return this->possition;
+    }
+    double getSalary(){
+        return this->salary;
+    }
+    // settery -> midyfikacja pól o wartość podaną z argumentu
+    void setName(string name){
+        this->name = name;
+    }
+    void setLastname(string lastname){
+        this->lastname = lastname;
+    }
+    void setPossition(string possition){
+        this->possition = possition;
+    }
+    void setSalary(double salary){
+        this->salary = salary;
+    }
+    // konstruktor
+    Employee(string name, string lastname, string possition, double salary){
+        this->name = name;
+        this->lastname = lastname;
+        this->possition = possition;
+        this->salary = salary;
+    }
+    void toString(){
+        cout << name << " " << lastname << " " << possition << " " << salary << "PLN" << endl;
+    }
+};
+
+int main() {
+    Employee e("test","test","test",10000);
+    cout << e.getPossition() << endl;
+    // set - zmiana pozycji
+    e.setPossition("developer");
+    // get - pobranie nowej pozycji
+    cout << e.getPossition() << endl;
+    // zwiększ pensję o 20%
+    e.setSalary(e.getSalary() * 1.2);
+    cout << e.getSalary() << endl;
+    e.toString();
     return 0;
 }
