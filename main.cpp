@@ -201,7 +201,12 @@ public:
     void sortNumbers(bool asc){     // asc=true min-max if asc=false max-min //
         for (int i = 0; i < (sizeof(result)/ sizeof(int)) - 1; ++i) {
             for (int j = 0; j < (sizeof(result)/ sizeof(int)) -1; ++j) {
-                if(result[j] > result[j+1]){
+                if((result[j] > result[j+1]) && (asc == true)){
+                    int element = result[j+1];
+                    result[j+1] = result[j];
+                    result[j] = element;
+                }
+                if((result[j] < result[j+1]) && (asc == false)){
                     int element = result[j+1];
                     result[j+1] = result[j];
                     result[j] = element;
@@ -217,6 +222,8 @@ int main() {
     l.generateNumbers();
     l.getResult();
     l.sortNumbers(true);
+    l.getResult();
+    l.sortNumbers(false);
     l.getResult();
 
     return 0;
