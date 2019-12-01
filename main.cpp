@@ -252,7 +252,7 @@ int Player::globalId = 0;
 
 class Employee {        // klasa modelu
 private:
-    static id globalId;
+    static int globalId;
     int id;
     string name, lastname, possition;
     double salary;
@@ -297,7 +297,7 @@ public:
         this->salary = salary;
     }
     void toString(){
-        cout << name << " " << lastname << " " << possition << " " << salary << "PLN" << endl;
+        cout << id << " " << name << " " << lastname << " " << possition << " " << salary << "PLN" << endl;
     }
 };
 
@@ -321,6 +321,8 @@ public:
         }
     }
 };
+
+int Employee::globalId=0;
 
 int main() {
     Company c;
