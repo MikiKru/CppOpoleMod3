@@ -217,14 +217,34 @@ public:
     }
 };
 
+class Player{               //  waga / (wzrost/100)^2
+public:
+    static int globalId;
+    int id;
+    string name, lastname, repr;
+    double weight,height;
+public:
+    Player(string name, string lastname, string repr, double weight, double height){
+        globalId++;
+        this->id = globalId;
+        this->name = name;
+        this->lastname = lastname;
+        this->repr = repr;
+        this->weight = weight;
+        this->height = height;
+    }
+    double calculateBMI(){
+        return weight/(pow(height/100,2));
+    }
+    void printPlayer(){
+
+    }
+};
+int Player::globalId = 0;
+
 int main() {
-    Lotto l;
-    l.generateNumbers();
-    l.getResult();
-    l.sortNumbers(true);
-    l.getResult();
-    l.sortNumbers(false);
-    l.getResult();
+    Player p("Adam","Malysz","POL",50, 165);
+    cout << "BMI: " << p.calculateBMI() << endl;
 
     return 0;
 }
