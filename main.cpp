@@ -321,16 +321,21 @@ int main() {
         cout << "(I)-dodaj pracownika \n(S)-wypisz wszystkich \n(Q)-wyjscie" << endl;
         string choice;
         cin >> choice;
-        if(choice == "Q"){
+        if(choice == "Q" || choice == "q"){
             cout << "wyjscie z programu" << endl;
             break;
-        } else if(choice == "I"){
+        } else if(choice == "I" || choice == "i"){
             string name, lastname, possition;
             double salary;
             cout << "podaj imie, nazwisko, stanowsiko i pensje " << endl;
             cin >> name >> lastname >> possition >> salary;
+            if(cin.fail()){
+                cin.clear();
+                cout << "blad danych" << endl;
+                continue;
+            }
             c.addEmployee(name,lastname, possition, salary);
-        } else if(choice == "S"){
+        } else if(choice == "S" || choice == "s"){
             c.getEmployees();
         } else{
             cout << "bledny wybor" << endl;
