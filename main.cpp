@@ -354,6 +354,7 @@ int main() {
             int  deletedId;
             cin >> deletedId;
             c.deleteEmployeeById(deletedId);
+            c.getEmployees();
         } else if(choice == "I" || choice == "i"){
             string name, lastname, possition;
             double salary;
