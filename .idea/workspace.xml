@@ -13,11 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ef4dd69b-d9b3-4625-83f6-037026ef4b5e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CppOpoleMod3.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CppOpoleMod3.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CppOpoleMod3.dir/main.cpp.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CppOpoleMod3.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CppOpoleMod3.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CppOpoleMod3.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,6 +26,20 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,6 +47,7 @@
   <component name="ProjectId" id="1UKKhfB0SqR5e8Z8k8dOkHzdfjx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
@@ -69,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575099966536</updated>
       <workItem from="1575099968697" duration="22944000" />
-      <workItem from="1575187317930" duration="7392000" />
+      <workItem from="1575187317930" duration="9174000" />
     </task>
     <servers />
   </component>

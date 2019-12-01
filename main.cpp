@@ -250,7 +250,7 @@ private:
 int Player::globalId = 0;
 
 
-class Employee {
+class Employee {        // klasa modelu
 private:
     string name, lastname, possition;
     double salary;
@@ -293,16 +293,32 @@ public:
     }
 };
 
+class Company {      // klasa kontrollera/serwisu -> implemntacja logiki beiznesowej aplikacji
+private:
+    Employee employees [100];
+    int index = 0;
+public:
+    void addEmployee(string name, string lastname, string possition, double salary){
+        // utworzenie obiektu pracownika
+        Employee e(name, lastname, possition, salary);
+        // dodanie obiektu do listy
+        employees[index] = e;
+        // inkrementacja indeksu
+        index++;
+    }
+    void getEmployees(){
+        for (int i = 0; i <= index; i++) {
+            // wypisanie wszystkich pól obiektu
+            employees[i].toString();
+        }
+    }
+};
+
 int main() {
-    Employee e("test","test","test",10000);
-    cout << e.getPossition() << endl;
-    // set - zmiana pozycji
-    e.setPossition("developer");
-    // get - pobranie nowej pozycji
-    cout << e.getPossition() << endl;
-    // zwiększ pensję o 20%
-    e.setSalary(e.getSalary() * 1.2);
-    cout << e.getSalary() << endl;
-    e.toString();
+    Company c;
+    c.addEmployee("x","x","x",1000);
+    c.addEmployee("y","y","y",3000);
+    c.addEmployee("z","z","z",2000);
+    c.getEmployees();
     return 0;
 }
