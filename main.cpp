@@ -308,7 +308,7 @@ public:
         index++;
     }
     void getEmployees(){
-        for (int i = 0; i <= index; i++) {
+        for (int i = 0; i < index; i++) {
             // wypisanie wszystkich pól obiektu
             employees[i].toString();
         }
@@ -317,9 +317,24 @@ public:
 
 int main() {
     Company c;
-    c.addEmployee("x","x","x",1000);
-    c.addEmployee("y","y","y",3000);
-    c.addEmployee("z","z","z",2000);
-    c.getEmployees();
+    while(true) {
+        cout << "(I)-dodaj pracownika \n(S)-wypisz wszystkich \n(Q)-wyjscie" << endl;
+        string choice;
+        cin >> choice;
+        if(choice == "Q"){
+            cout << "wyjscie z programu" << endl;
+            break;
+        } else if(choice == "I"){
+            string name, lastname, possition;
+            double salary;
+            cout << "podaj imie, nazwisko, stanowsiko i pensje " << endl;
+            cin >> name >> lastname >> possition >> salary;
+            c.addEmployee(name,lastname, possition, salary);
+        } else if(choice == "S"){
+            c.getEmployees();
+        } else{
+            cout << "bledny wybor" << endl;
+        }
+    }
     return 0;
 }
