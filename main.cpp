@@ -325,17 +325,17 @@ public:
         for (int i = 0; i < index; i++) {
             if(employees[i].getId() == deletedId){
                 isFound = true;
+                index--;                        // aktualizajcja iliści pracowników
                 continue;
             }
             if(isFound){
                 employees[i-1] = employees[i];  // aktualizacja komowiek w liście
             }
-            if(i == (index - 1)){
+            if((i == (index - 1)) && isFound){
                 Employee e;
                 employees[i] = e;
             }
         }
-        index--;                                // aktualizajcja iliści pracowników
     }
 };
 int Employee::globalId=0;
@@ -353,6 +353,11 @@ int main() {
             cout << "podaj id pracownika do usuniecia" << endl;
             int  deletedId;
             cin >> deletedId;
+            if(cin.fail()){
+                cin.clear();
+                cout << "blad danych" << endl;
+                continue;
+            }
             c.deleteEmployeeById(deletedId);
             c.getEmployees();
         } else if(choice == "I" || choice == "i"){
