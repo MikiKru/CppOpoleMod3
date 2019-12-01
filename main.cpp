@@ -321,13 +321,21 @@ public:
         }
     }
     void deleteEmployeeById(int deletedId){
+        bool isFound = false;
         for (int i = 0; i < index; i++) {
             if(employees[i].getId() == deletedId){
-                // obiekt pustego praconwnika
+                isFound = true;
+                continue;
+            }
+            if(isFound){
+                employees[i-1] = employees[i];  // aktualizacja komowiek w liście
+            }
+            if(i == (index - 1)){
                 Employee e;
                 employees[i] = e;
             }
         }
+        index--;                                // aktualizajcja iliści pracowników
     }
 };
 int Employee::globalId=0;
