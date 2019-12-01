@@ -252,10 +252,15 @@ int Player::globalId = 0;
 
 class Employee {        // klasa modelu
 private:
+    static id globalId;
+    int id;
     string name, lastname, possition;
     double salary;
 public:
     // gettery -> bez argumentu zwracające wartoś typu pola
+    int getId(){
+        return this->id;
+    }
     string getName(){
         return this->name;
     }
@@ -284,6 +289,8 @@ public:
     Employee (){}       // konstruktor domyślny do inicjalizacji listy employees
     // konstruktor
     Employee(string name, string lastname, string possition, double salary){
+        globalId++;
+        this->id = globalId;
         this->name = name;
         this->lastname = lastname;
         this->possition = possition;
